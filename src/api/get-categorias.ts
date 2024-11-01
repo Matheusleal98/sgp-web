@@ -8,7 +8,6 @@ export interface GetCategoriasResponse {
 
 
 export async function getCategorias() {
-  const response = await api.get<GetCategoriasResponse>('categorias')
-  
+  const response = await api.get<GetCategoriasResponse[]>('categorias')
   return response.data;
 }
