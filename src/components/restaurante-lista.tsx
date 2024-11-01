@@ -7,7 +7,7 @@ interface RestauranteListaProps {
 
 export function RestauranteLista({ restaurantes }: RestauranteListaProps) {
   return(
-    <div className="flex gap-4 overflow-x-scroll px-5 [&::-webkit-scrollbar]:hidden">
+    <div className="flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
       {restaurantes.map((restaurante) => (
         <RestauranteItem
           key={restaurante.seq}

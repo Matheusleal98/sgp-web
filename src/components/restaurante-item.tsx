@@ -11,14 +11,13 @@ interface RestauranteitemProps {
 
 export function RestauranteItem({ restaurante, className }: RestauranteitemProps) {
   return (
-    <div className={cn("min-w-[266px] max-w-[266px]", className)}>
+    <div className={cn("min-w-[381px] max-w-[381px]", className)}>
       <div className="w-full space-y-3">
-        <div className="relative h-[136px] w-full">
+        <div className="relative max-h-[222px] w-full">
           <Link to='/'>
             <img
               src={restaurante.imagemUrl}
-              sizes="100%"
-              className="rounded-lg object-cover"
+              className="rounded-lg object-cover max-h-[165px] w-full"
               alt={restaurante.nome}
             />
           </Link>

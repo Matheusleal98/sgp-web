@@ -23,7 +23,7 @@ export function Header() {
   };
 
   return (
-    <div className="flex justify-between px-5 pt-6">
+    <div className="flex items-center justify-between h-20">
       <Link to="/">
         <div className="relative h-10 w-[130px]">
           <img

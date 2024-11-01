@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { Produto, Restaurante } from "@/types/interfaces";
 import { ChevronRightIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { api } from "@/lib/axios";
 
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/header";
 import { CategoriaLista } from "@/components/categoria-lista";
-import { api } from "@/lib/axios";
 import { ProdutoLista } from "@/components/produto-lista";
 import { RestauranteLista } from "@/components/restaurante-lista";
 
@@ -34,66 +34,75 @@ export function Home() {
 
   return (
     <>
-      <div className="px-32">
-        <Header />
-      </div>
-
-      <div>
-        <img
-          src="/banner-oferta.png"
-          alt="Banner Ofertas"
-          sizes="100%"
-          className="object-cover"
-        />
-      </div>
-
-      <div className="px-32 pt-6">
-        <CategoriaLista />
-      </div>
-
-      <div className="pt-10 px-32">
-        <div className="space-y-4">
-          <div className="flex items-center justify-between px-5">
-            <h2 className="font-semibold">Pedidos Recomendados</h2>
-            <Button
-              variant="ghost"
-              className="h-fit p-0 text-primary hover:bg-transparent"
-              asChild
-            >
-              <Link to="/">
-                Ver todos
-                <ChevronRightIcon size={20} />
-              </Link>
-            </Button>
-          </div>
-          <ProdutoLista produtos={produtos} />
+      <div className="max-w-[1440px] mx-auto">
+        <div className="px-32">
+          <Header />
         </div>
-      </div>
 
-      <div className="px-32 pt-10">
-        <div className="flex justify-between">
-          <img src="/promo-banner-01.png" alt="Banner Promoção 01" width={810} height={215} />
-
-          <img src="/promo-banner-02.png" alt="Banner Promoção 02" width={810} height={215} />
+        <div>
+          <img
+            src="/banner-oferta.png"
+            alt="Banner Ofertas"
+            className="w-full object-cover"
+          />
         </div>
-      </div>
 
-      <div className="pt-10 px-32">
-        <div className="space-y-4">
-          <div className="flex items-center justify-between px-5">
-            <h2 className="font-semibold">Restaurantes Recomendados</h2>
-            <Button
-              variant="ghost"
-              className="h-fit p-0 text-primary hover:bg-transparent"
-              asChild
-            >
-              <Link to="/">
-                Ver todos
-                <ChevronRightIcon size={20} />
-              </Link>
-            </Button>
+        <div className="px-32 pt-10">
+          <CategoriaLista />
+        </div>
+
+        <div className="px-32 pt-10">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="font-semibold">Pedidos Recomendados</h2>
+              <Button
+                variant="ghost"
+                className="h-fit p-0 text-primary hover:bg-transparent"
+                asChild
+              >
+                <Link to="/">
+                  Ver todos
+                  <ChevronRightIcon size={20} />
+                </Link>
+              </Button>
+            </div>
+            <ProdutoLista produtos={produtos} />
           </div>
-          <RestauranteLista restaurantes={restaurantes} />
+        </div>
+
+        <div className="px-32 pt-10">
+          <div className="flex gap-5">
+            <img
+              src="/promo-banner-01.png"
+              alt="Banner Promoção 01"
+              className="w-[582px] h-[215px]"
+            />
+
+            <img
+              src="/promo-banner-02.png"
+              alt="Banner Promoção 02"
+              className="w-[582px] h-[215px]"
+            />
+          </div>
+        </div>
+
+        <div className="py-10 px-32">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="font-semibold">Restaurantes Recomendados</h2>
+              <Button
+                variant="ghost"
+                className="h-fit p-0 text-primary hover:bg-transparent"
+                asChild
+              >
+                <Link to="/">
+                  Ver todos
+                  <ChevronRightIcon size={20} />
+                </Link>
+              </Button>
+            </div>
+            <RestauranteLista restaurantes={restaurantes} />
+          </div>
         </div>
       </div>
     </>

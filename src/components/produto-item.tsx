@@ -12,7 +12,7 @@ interface ProdutoItemProps {
 export function ProdutoItem({ produto, className }: ProdutoItemProps) {
   return (
     <Link
-      className={cn("w-[150px] min-w-[150px]", className)}
+      className={cn("w-[180px] min-w-[180px]", className)}
       to='/'
     >
       <div className="w-full space-y-2">
@@ -20,8 +20,7 @@ export function ProdutoItem({ produto, className }: ProdutoItemProps) {
           <img
             src={produto.imagemUrl}
             alt={produto.nome}
-            sizes="100%"
-            className="rounded-lg object-cover shadow-md"
+            className="rounded-lg object-cover shadow-md h-[180px] w-[180px]"
           />
 
           {produto.desconto && (

@@ -6,7 +6,7 @@ interface CategoriaItemProps {
 
 export function Categoriaitem({ categoria }: CategoriaItemProps) {
   return (
-    <div className='flex items-center justify-center w-[152px] rounded-full gap-3 px-8 py-3 shadow-sm'>
+    <div className='flex items-center justify-center w-[152px] rounded-full gap-3 shadow-sm'>
       <img 
         src={categoria.imagemUrl} 
         alt={categoria.nome}
