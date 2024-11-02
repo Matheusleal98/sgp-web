@@ -17,7 +17,7 @@ export function RestauranteItem({ restaurante, className }: RestauranteitemProps
           <Link to='/'>
             <img
               src={restaurante.imagemUrl}
-              className="rounded-lg object-cover max-h-[165px] w-full"
+              className="rounded-lg object-cover max-h-[165px] min-h-[165px] w-full"
               alt={restaurante.nome}
             />
           </Link>

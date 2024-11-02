@@ -7,8 +7,8 @@ import { api } from "@/lib/axios";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/header";
 import { CategoriaLista } from "@/components/categoria-lista";
-import { ProdutoLista } from "@/components/produto-lista";
-import { RestauranteLista } from "@/components/restaurante-lista";
+import { ProdutoItem } from "@/components/produto-item";
+import { RestauranteItem } from "@/components/restaurante-item";
 
 export function Home() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -60,13 +60,17 @@ export function Home() {
                 className="h-fit p-0 text-primary hover:bg-transparent"
                 asChild
               >
-                <Link to="/">
+                <Link to="/produtos/recomendados">
                   Ver todos
                   <ChevronRightIcon size={20} />
                 </Link>
               </Button>
             </div>
-            <ProdutoLista produtos={produtos} />
+            <div className="flex gap-4 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
+              {produtos.map((produto) => (
+                <ProdutoItem key={produto.seq} produto={produto} />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -95,13 +99,20 @@ export function Home() {
                 className="h-fit p-0 text-primary hover:bg-transparent"
                 asChild
               >
-                <Link to="/">
+                <Link to="/restaurantes/recomendados">
                   Ver todos
                   <ChevronRightIcon size={20} />
                 </Link>
               </Button>
             </div>
-            <RestauranteLista restaurantes={restaurantes} />
+            <div className="flex gap-5 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
+              {restaurantes.map((restaurante) => (
+                <RestauranteItem
+                  key={restaurante.seq}
+                  restaurante={restaurante}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
