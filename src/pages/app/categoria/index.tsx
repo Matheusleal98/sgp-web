@@ -4,9 +4,9 @@ import { RestauranteLista } from "@/components/restaurante-lista";
 import { Button } from "@/components/ui/button";
 import { api } from "@/lib/axios";
 import { Categoria } from "@/types/interfaces";
-import { ChevronLeftIcon, ChevronRightIcon, ChevronsLeftRightIcon } from "lucide-react";
+import { ChevronLeftIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export function CategoriaPage() {
   const { seq } = useParams();
