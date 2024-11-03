@@ -3,6 +3,7 @@ import Home from "./pages/app/home";
 import { RestaurantesRecomendados } from "./pages/app/restaurante/recomendados";
 import { PedidoRecomendados } from "./pages/app/produto/recomendados";
 import { ProdutoDetalhes } from "./pages/app/produto";
+import { RestauranteDetalhes } from "./pages/app/restaurante";
 
 export const router = createBrowserRouter([
   {
@@ -20,5 +21,9 @@ export const router = createBrowserRouter([
   {
     path: 'produto/:seq',
     element: <ProdutoDetalhes />
+  },
+  {
+    path: 'restaurante/:seq',
+    element: <RestauranteDetalhes />
   },
 ])
