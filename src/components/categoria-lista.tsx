@@ -1,5 +1,5 @@
 import { getCategorias, GetCategoriasResponse } from "@/api/get-categorias";
-import { Categoriaitem } from "./categoria-item";
+import { CategoriaItem } from "./categoria-item";
 import { useEffect, useState } from "react";
 
 export function CategoriaLista() {
@@ -22,7 +22,7 @@ export function CategoriaLista() {
   return (
     <div className='flex gap-5'>
       {categorias.map((categoria) => (
-        <Categoriaitem key={categoria.seq} categoria={categoria} />
+        <CategoriaItem key={categoria.seq} categoria={categoria} />
       ))}
     </div>
   );

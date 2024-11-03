@@ -2,6 +2,8 @@ export interface Categoria {
   seq: string
   nome: string
   imagemUrl: string
+  restaurantes?: Restaurante[]
+  produtos?: Produto[]
 }
 
 export interface Restaurante {

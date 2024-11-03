@@ -4,6 +4,7 @@ import { RestaurantesRecomendados } from "./pages/app/restaurante/recomendados";
 import { PedidoRecomendados } from "./pages/app/produto/recomendados";
 import { ProdutoDetalhes } from "./pages/app/produto";
 import { RestauranteDetalhes } from "./pages/app/restaurante";
+import { CategoriaPage } from "./pages/app/categoria";
 
 export const router = createBrowserRouter([
   {
@@ -25,5 +26,9 @@ export const router = createBrowserRouter([
   {
     path: 'restaurante/:seq',
     element: <RestauranteDetalhes />
+  },
+  {
+    path: 'categoria/:seq',
+    element: <CategoriaPage />
   },
 ])
