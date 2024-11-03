@@ -14,7 +14,7 @@ export function RestauranteItem({ restaurante, className }: RestauranteitemProps
     <div className={cn("min-w-[381px] max-w-[381px]", className)}>
       <div className="w-full space-y-3">
         <div className="relative max-h-[222px] w-full">
-          <Link to='/'>
+          <Link to={`/restaurante/${restaurante.seq}`}>
             <img
               src={restaurante.imagemUrl}
               className="rounded-lg object-cover max-h-[165px] min-h-[165px] w-full"
