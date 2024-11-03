@@ -13,7 +13,7 @@ export function ProdutoItem({ produto, className }: ProdutoItemProps) {
   return (
     <Link
       className={cn("w-[180px] min-w-[180px]", className)}
-      to='/'
+      to={`/produto/${produto.seq}`}
     >
       <div className="w-full space-y-2">
         <div className="relative aspect-square w-full">

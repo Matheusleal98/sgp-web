@@ -27,6 +27,7 @@ export function PedidoRecomendados() {
         <Header />
       </div>
       <div className="px-32 py-10">
+      <h2 className="text-xl font-bold mb-4">Pedidos Recomendados</h2>
         <ProdutoLista produtos={produtos} />
       </div>
     </div>
