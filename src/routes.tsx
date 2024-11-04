@@ -5,6 +5,8 @@ import { PedidoRecomendados } from "./pages/app/produto/recomendados";
 import { ProdutoDetalhes } from "./pages/app/produto";
 import { RestauranteDetalhes } from "./pages/app/restaurante";
 import { CategoriaPage } from "./pages/app/categoria";
+import { MeusPedidos } from "./pages/app/pedido/meus-pedidos";
+import { RestaurantesFavoritos } from "./pages/app/restaurante/restaurante-favoritos";
 
 export const router = createBrowserRouter([
   {
@@ -30,5 +32,13 @@ export const router = createBrowserRouter([
   {
     path: 'categoria/:seq',
     element: <CategoriaPage />
+  },
+  {
+    path: 'meus-pedidos',
+    element: <MeusPedidos />
+  },
+  {
+    path: 'restaurantes-favoritos',
+    element: <RestaurantesFavoritos />
   },
 ])

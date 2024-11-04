@@ -12,7 +12,7 @@ export function CategoriaPage() {
   const { seq } = useParams();
   const [categoria, setCategoria] = useState<Categoria>();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchData() {
@@ -38,14 +38,16 @@ export function CategoriaPage() {
         </div>
 
         <div className="px-32 mt-10">
-          <Button 
+        <Button
+            className="rounded-full bg-white text-foreground hover:text-white"
+            size="icon"
             onClick={handleBackClick}
-            className=''
           >
             <ChevronLeftIcon />
-            <h2 className='text-base'>voltar</h2>
           </Button>
-          <h2 className="text-lg font-semibold mt-6">Comida {categoria?.nome}</h2>
+          <h2 className="text-lg font-semibold mt-6">
+            Comida {categoria?.nome}
+          </h2>
 
           <div className="mt-6">
             {categoria && categoria.produtos && (

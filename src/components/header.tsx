@@ -16,10 +16,16 @@ import {
   ScrollTextIcon,
 } from "lucide-react";
 import { Separator } from "./ui/separator";
+import { AuthDialog } from "@/pages/auth";
+import { useState } from "react";
 
 export function Header() {
+
+  const [isAuthDialogOpen, setIsDialogOpen] = useState(false);
+
+
   const handleSignInClick = () => {
-    console.log("clicou para entrar no sistema.");
+    setIsDialogOpen(true);
   };
 
   return (
@@ -52,9 +58,10 @@ export function Header() {
 
           <div className="flex items-center justify-between pt-10">
             <h2 className="font-semibold">Olá, Faça seu login!</h2>
-            <Button size="icon" onClick={handleSignInClick}>
+            {/* <Button size="icon" onClick={handleSignInClick}>
               <LogInIcon style={{ width: "20px", height: "20px" }} />
-            </Button>
+            </Button> */}
+            <AuthDialog isOpen={isAuthDialogOpen} onClose={() => setIsDialogOpen(false)} />
           </div>
 
           <div className="py-6">

@@ -1,16 +1,19 @@
 import { DeliveryInfo } from "@/components/delivery-info";
 import { Header } from "@/components/header";
 import { ProdutoItem } from "@/components/produto-item";
+import { Button } from "@/components/ui/button";
 import { api } from "@/lib/axios";
 import { Produto, Restaurante } from "@/types/interfaces";
-import { StarIcon } from "lucide-react";
+import { ChevronLeftIcon, StarIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export function RestauranteDetalhes() {
   const { seq } = useParams();
   const [restaurante, setRestaurante] = useState<Restaurante>();
-  const [produtosRestaurante, setProdutosRestaurante] = useState<Produto[]>([])
+  const [produtosRestaurante, setProdutosRestaurante] = useState<Produto[]>([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchData() {
@@ -25,6 +28,10 @@ export function RestauranteDetalhes() {
 
     fetchData();
   }, [seq]);
+
+  const handleBackClick = () => {
+    navigate(-1);
+  };
 
   return (
     <>
@@ -42,6 +49,14 @@ export function RestauranteDetalhes() {
                 sizes="100%"
                 className="object-cover w-full h-[380px] rounded-sm"
               />
+
+              <Button
+                className="absolute left-4 top-4 rounded-full bg-white text-foreground hover:text-white"
+                size="icon"
+                onClick={handleBackClick}
+              >
+                <ChevronLeftIcon />
+              </Button>
             </div>
 
             <div className="relative w-full">
@@ -75,25 +90,26 @@ export function RestauranteDetalhes() {
                 </div>
               )}
 
-              <div className='mt-6'>
-              <h3 className="font-semibold">Sobre</h3>
+              <div className="mt-6">
+                <h3 className="font-semibold">Sobre</h3>
                 <p className="text-sm text-muted-foreground mt-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec nisl lorem. Praesent pharetra, sapien ut fringilla malesuada, nisi felis ullamcorper ex, eu consectetur elit dolor sed dolor.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Aenean nec nisl lorem. Praesent pharetra, sapien ut fringilla
+                  malesuada, nisi felis ullamcorper ex, eu consectetur elit
+                  dolor sed dolor.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className='px-32 mt-10'>
-            <h2 className='text-lg font-semibold mb-4'>
-              Pedidos Recomendados
-            </h2>
-            <div className='flex gap-4 overflow-x-scroll [&::-webkit-scrollbar]:hidden'>
-              {produtosRestaurante.map((produto) => (
-                <ProdutoItem key={produto.seq} produto={produto} />
-              ))}
-            </div>
+        <div className="px-32 mt-10">
+          <h2 className="text-lg font-semibold mb-4">Pedidos Recomendados</h2>
+          <div className="flex gap-4 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
+            {produtosRestaurante.map((produto) => (
+              <ProdutoItem key={produto.seq} produto={produto} />
+            ))}
+          </div>
         </div>
       </div>
     </>

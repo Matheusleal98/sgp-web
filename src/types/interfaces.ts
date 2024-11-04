@@ -26,3 +26,10 @@ export interface Produto {
   restaurante: Restaurante
   categoria: Categoria
 }
+
+export interface Usuario {
+  name: string,
+  imagemUrl?: string
+  email: string
+  password: string
+}
